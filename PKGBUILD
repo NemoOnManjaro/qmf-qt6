@@ -100,3 +100,4 @@ package() {
   mkdir -p ${pkgdir}/usr/lib/systemd/user/graphical-session.target.wants/
   ln -s ../messageserver5.service ${pkgdir}/usr/lib/systemd/user/graphical-session.target.wants/
   ln -s ../messageserver5-accounts-check.service ${pkgdir}/usr/lib/systemd/user/graphical-session.target.wants/
+}
