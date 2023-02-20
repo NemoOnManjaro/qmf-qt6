@@ -1,6 +1,7 @@
 [Unit]
 Description=messageserver5
 Requires=messageserver5-accounts-check.service
+Requires=lipstick.service
 After=msyncd.service
 After=messageserver5-accounts-check.service
 
