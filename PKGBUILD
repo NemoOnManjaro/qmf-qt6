@@ -2,7 +2,7 @@
 
 pkgname=qmf-qt5
 pkgver=4.0.4+git136
-pkgrel=1
+pkgrel=2
 pkgdesc="Qt Messaging Framework (QMF) Qt5"
 arch=('x86_64' 'aarch64')
 url="https://github.com/sailfishos/messagingframework"
@@ -23,8 +23,8 @@ sha256sums=('844e7232cb8520e38a6cacd4e6e0cfdb0584641daee096f6741b803b4737fdd9'
     'a839b7130aec6f06291aea0ddb2c739f6641a209ab90877be6eb954d49f537e8'
     'becad4f91271b383ad1e687a6aec9410043e0ede58922ab0c158ac9344073977'
     'b2b219fd0a88e26f2f62223cd2142232131924fa3d78a7942677f4598e4e0b5e'
-    'fa29bf8bb42797d347ed10234cdfb9665bbb3ab489fdd7262539a1647b3f672e'
-    'a9712e0ececefc3b78d2d2cd51158b6fbbc2db18236dd45214aa6e108574da8e')
+    '943d9b6d0eecd3b340742238cf9e7dd46b6ea5166f349d930609808a00bb31b2'
+    'b619e1b888b1de43c051a39daf75b0d1e3d04a9ed52987dad599efeb0b5d116e')
 
 prepare() {
   cd messagingframework-4.0.4-git136
@@ -97,7 +97,7 @@ package() {
   cp ${srcdir}/messageserver5.service "${pkgdir}/usr/lib/systemd/user/messageserver5.service"
   cp ${srcdir}/messageserver5-accounts-check.service "${pkgdir}/usr/lib/systemd/user/messageserver5-accounts-check.service"
 
-  mkdir -p ${pkgdir}/usr/lib/systemd/user/graphical-session.target.wants/
-  ln -s ../messageserver5.service ${pkgdir}/usr/lib/systemd/user/graphical-session.target.wants/
-  ln -s ../messageserver5-accounts-check.service ${pkgdir}/usr/lib/systemd/user/graphical-session.target.wants/
+  mkdir -p ${pkgdir}/usr/lib/systemd/user/user-session.target.wants/
+  ln -s ../messageserver5.service ${pkgdir}/usr/lib/systemd/user/user-session.target.wants/
+  ln -s ../messageserver5-accounts-check.service ${pkgdir}/usr/lib/systemd/user/user-session.target.wants/
 }
